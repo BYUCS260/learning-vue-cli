@@ -15,34 +15,40 @@ your web browser:
 
 How did this page get rendered?
 
-First, the URL is given to the Router in `src/router.js`:
+First, the URL is given to the Router in `src/router/index.js`:
 
 ```
 import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: function () {
+      return import(/* webpackChunkName: "about" */ '../views/About.vue')
+    }
+  }
+]
+
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
-  ]
+  routes
 })
+
+export default router
 ```
 
 The Vue Router uses this configuration to choose which view to render from the `views` folder.
@@ -53,14 +59,14 @@ I would recommend using the configuration shown for the `Home`, component, which
 
 The configuration shown for the `About` component is more advanced. I would recommend not using this for now. It uses [lazy loading](https://alligator.io/vuejs/lazy-loading-vue-cli-3-webpack/), an advanced feature that we won't cover now.
 
-You can add an import statement:
+You should see the import statements:
 
 ```
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 ```
 
-and modify the path for the `About` component:
+modify the path for the `About` component:
 
 ```
     path: '/about',
