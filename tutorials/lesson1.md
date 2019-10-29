@@ -86,8 +86,9 @@ end will follow this architecture:
 ![front end architecture](/images/vue-architecture.png)
 
 Now create a file "vue.config.js" with the following content
-// vue.config.js
+
 ```
+// vue.config.js
 module.exports = {
     // options...
     devServer: {
