@@ -108,7 +108,7 @@ module.exports = {
         disableHostCheck: true,
         proxy: {
             '^/api': {
-                target: 'http://localhost:3000',
+                target: 'http://your-hostname:3000',
             },
         }
     }
@@ -129,7 +129,7 @@ Run the front end with:
 npm run serve
 ```
 
-This will let you visit the website at `localhost:8080`. You will notice that the website automatically reloads every time you edit a file that modifies the front end.
+This will let you visit the website at `your-hostname:8080`. You will notice that the website automatically reloads every time you edit a file that modifies the front end.
 
 ## Title
 
