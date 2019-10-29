@@ -85,4 +85,15 @@ end will follow this architecture:
 
 ![front end architecture](/images/vue-architecture.png)
 
-We'll go through each of these parts in more details in the next lesson.
+Now create a file "vue.config.js" with the following content
+// vue.config.js
+```
+module.exports = {
+    // options...
+    devServer: {
+        disableHostCheck: true
+    }
+}
+```
+
+We'll go through each of these files in more details in the next lesson.
