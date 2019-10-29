@@ -98,17 +98,20 @@ When you use `npm run serve` with Vue CLI, it starts the webpack development ser
 
 This means we need to configure the webpack development server to send any requests for your REST API (anything starting with `/api`), to the node server we'll be running.
 
-To do this, create a file called `vue.config.js` in the top level of your project directory. In this file, put the following:
+To do this, edit the `vue.config.js` in the top level of your project directory. In this file, put the following:
 
 ```
+// vue.config.js
 module.exports = {
-  devServer: {
-    proxy: {
-      '^/api': {
-        target: 'http://localhost:3000',
-      },
+    // options...
+    devServer: {
+        disableHostCheck: true,
+        proxy: {
+            '^/api': {
+                target: 'http://localhost:3000',
+            },
+        }
     }
-  }
 }
 ```
 
