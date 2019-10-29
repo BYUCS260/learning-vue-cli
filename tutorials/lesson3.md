@@ -380,7 +380,7 @@ button {
 
 ## Router
 
-The last step is to setup the router to get to this page. In `src/router.js`
+The last step is to setup the router to get to this page. In `src/router/index.js`
 add this import:
 
 ```
