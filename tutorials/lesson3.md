@@ -384,7 +384,7 @@ The last step is to setup the router to get to this page. In `src/router/index.j
 add this import:
 
 ```
-import Create from './views/Create.vue'
+import Create from '../views/Create.vue'
 ```
 
 and then add this route:
