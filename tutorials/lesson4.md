@@ -16,7 +16,7 @@ A Vue component calls an action on the store, which uses a mutation to change th
 
 For example, a component might call the `getItems` action to fetch items from the back end, use the `setItems` mutation to store these as state, and then a component can use `$store.state.items` to render them
 
-The Vue CLI has created Vuex state for us in `src/store.js`:
+The Vue CLI has created Vuex state for us in `src/store/index.js`:
 
 ```
 import Vue from 'vue'
