@@ -105,16 +105,18 @@ To do this, edit the `vue.config.js` in the top level of your project directory.
 module.exports = {
     // options...
     devServer: {
+        host: '0.0.0.0',
+        port: '8080',
         disableHostCheck: true,
         proxy: {
             '^/api': {
-                target: 'http://your-hostname:3000',
+                target: 'http://class.clementbyu.com:3000',
             },
-        }
+        },
     }
 }
 ```
-
+You may be interested in more information about the [webpack devServer options](https://webpack.js.org/configuration/dev-server/) and [vue.config.js](https://cli.vuejs.org/config/#global-cli-config).
 ## Front End
 
 For the rest of this lesson, we will be modifying the front end. While we do this, run the back end with:
