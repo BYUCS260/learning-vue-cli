@@ -105,12 +105,12 @@ To do this, edit the `vue.config.js` in the top level of your project directory.
 module.exports = {
     // options...
     devServer: {
-        host: '0.0.0.0',
-        port: '8080',
+        useLocalIp: false,
+        public: 'yourhost:8080',
         disableHostCheck: true,
         proxy: {
             '^/api': {
-                target: 'http://class.clementbyu.com:3000',
+                target: 'http://yourhost:3000',
             },
         },
     }
